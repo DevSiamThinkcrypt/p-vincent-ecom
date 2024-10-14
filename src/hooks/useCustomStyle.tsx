@@ -1,12 +1,18 @@
 const colors = {
-	primary: '#F9EAE1', // body
-	secondary: '#101D42', // header
-	tertiary: '#7785AC', // hover
+	black: '#000000',
+	light_black: '#121212',
+	banner_color: 'rgba(251,50,144,.85)',
+	hover_color: 'rgba(251,50,144,.85)',
+	nav_hover: '#e9ecef',
+	text_pink: '#fb3290',
+	text_color: '#212529',
+	border_color: '#646464',
+	text_gray: '#646464',
+	white: '#fff',
 };
 
 const fonts = {
-	primary: '"Montserrat", sans-serif',
-	secondary: '"Barlow", sans-serif',
+	primary: '"Noto Color Emoji", sans-serif',
 };
 
 const useCustomStyle = () => {
