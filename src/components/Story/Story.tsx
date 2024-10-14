@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
-import React, { FC } from 'react';
+
 import PageContainer from '../PageContainer/PageContainer';
 import { Box, Flex, Grid, GridItem, Image } from '@chakra-ui/react';
 import StoryHeading from './StoryComponent/StoryHeading';

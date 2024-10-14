@@ -1,11 +1,10 @@
 import Button from '@/components/Button/Button';
 import useCustomStyle from '@/hooks/useCustomStyle';
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
-import Link from 'next/link';
 import React from 'react';
 
 const Banner = () => {
-	const { colors, fonts } = useCustomStyle();
+	const { colors } = useCustomStyle();
 	return (
 		<Box
 			pos='relative'

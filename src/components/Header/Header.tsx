@@ -8,7 +8,7 @@ import {
 	Image,
 	Input,
 	Text,
-	useDisclosure,
+	// useDisclosure,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
@@ -21,12 +21,12 @@ const Header = () => {
 	const { colors, fonts } = useCustomStyle();
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const [showSearchBox, setShowSearchBox] = useState(false);
-	const { isOpen, onOpen, onClose } = useDisclosure();
-	const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+	// const { isOpen, onOpen, onClose } = useDisclosure();
+	// const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
 
-	const handleToggleCategories = () => {
-		setIsCategoriesOpen(!isCategoriesOpen);
-	};
+	// const handleToggleCategories = () => {
+	// 	setIsCategoriesOpen(!isCategoriesOpen);
+	// };
 	// Animation Variants for search box
 	const searchBoxVariants = {
 		hidden: { y: '-10px', opacity: 0 },
@@ -185,7 +185,8 @@ const Header = () => {
 						<GridItem px='2rem'>Wishlist</GridItem>
 						{/* Cart Icon */}
 						<GridItem justifySelf='end' pl='2rem'>
-							<Flex gap='0.5rem' alignItems='center' onClick={onOpen}>
+						{/* <Flex gap='0.5rem' alignItems='center' onClick={onOpen}> */}
+							<Flex gap='0.5rem' alignItems='center'>
 								<Icon name='cart' size={25} />
 							</Flex>
 						</GridItem>

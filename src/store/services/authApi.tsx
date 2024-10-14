@@ -50,7 +50,7 @@ export const authApi = mainApi.injectEndpoints({
 				method: 'PUT',
 				body: { field, preferences },
 			}),
-			invalidatesTags: (result, error, { field, preferences }) => [field, 'self'],
+			invalidatesTags: (result, error, { field }) => [field, 'self'],
 		}),
 		updatePassord: builder.mutation<any, any>({
 			query: ({ field, preferences }) => ({
@@ -58,7 +58,7 @@ export const authApi = mainApi.injectEndpoints({
 				method: 'PUT',
 				body: { field, preferences },
 			}),
-			invalidatesTags: (result, error, { field, preferences }) => [field, 'self'],
+			invalidatesTags: (result, error, { field }) => [field, 'self'],
 		}),
 	}),
 	overrideExisting: false,

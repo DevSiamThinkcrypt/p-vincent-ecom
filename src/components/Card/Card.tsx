@@ -1,7 +1,6 @@
 import useCustomStyle from '@/hooks/useCustomStyle';
 import { Box, Text, Image, Flex } from '@chakra-ui/react';
 import { Icon } from '../Icon';
-import { col } from 'framer-motion/client';
 import Link from 'next/link';
 
 const ProductCard = () => {
