@@ -3,13 +3,21 @@
 import useCustomStyle from '@/hooks/useCustomStyle';
 // import { useColorModeValue } from '@chakra-ui/react';
 import React, { FC } from 'react';
-import { IoMdCart, IoIosHome, IoIosArrowForward } from 'react-icons/io';
+import {
+	IoMdCart,
+	IoIosHome,
+	IoIosArrowForward,
+	IoIosArrowBack,
+} from 'react-icons/io';
 
 import { IoSearch } from 'react-icons/io5';
 import { FiMenu } from 'react-icons/fi';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { FaTimes, FaHeart } from 'react-icons/fa';
 import { TiArrowForward } from 'react-icons/ti';
+import { MdOutlineLocalPhone, MdEmail } from 'react-icons/md';
+import { ImFacebook2 } from 'react-icons/im';
+import { IoLogoInstagram } from 'react-icons/io5';
 
 import { Box } from '@chakra-ui/react';
 // export type IconNameOptions = 'cart' | 'hamburger' | 'search' | 'user';
@@ -21,7 +29,12 @@ export type IconNameOptions =
 	| 'times'
 	| 'heart'
 	| 'cart_arrow'
-	| 'arriw_card_right';
+	| 'arrow_card_right'
+	| 'arrow_card_left'
+	| 'phone'
+	| 'mail'
+	| 'facebook'
+	| 'instragram';
 
 type IconProps = {
 	size?: number;
@@ -40,7 +53,12 @@ const icons: { [key in IconNameOptions]: FC<{ size: number; color: string }> } =
 		times: FaTimes,
 		heart: FaHeart,
 		cart_arrow: TiArrowForward,
-		arriw_card_right: IoIosArrowForward,
+		arrow_card_right: IoIosArrowForward,
+		arrow_card_left: IoIosArrowBack,
+		phone: MdOutlineLocalPhone,
+		mail: MdEmail,
+		facebook: ImFacebook2,
+		instragram: IoLogoInstagram,
 	};
 
 const Icon: FC<IconProps> = ({ name, _hover, ...props }) => {
@@ -51,12 +69,12 @@ const Icon: FC<IconProps> = ({ name, _hover, ...props }) => {
 	return (
 		<Box
 			as='span'
-			_hover={_hover} // Apply hover styles here
+			_hover={{ svg: _hover }} // Apply hover styles here
 			cursor='pointer' // Ensure cursor is pointer on hover
 		>
 			<IconComponent
 				size={props.size || 22}
-				color={colors?.white} // Use prop color or fallback to default
+				color={props.color || colors?.white} // Use prop color or fallback to default
 				{...props}
 			/>
 		</Box>

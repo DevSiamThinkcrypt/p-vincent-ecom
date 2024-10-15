@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 
-
 :root {
 	--font-mono: ui-monospace, Menlo, Monaco, sans-serif, 'Cascadia Mono',
 		'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace',
@@ -22,4 +21,8 @@ li {
 
 a {
 	text-decoration: none;
+}
+
+body {
+	overflow-x: hidden;
 }

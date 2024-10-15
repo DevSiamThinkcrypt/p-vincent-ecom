@@ -9,6 +9,7 @@ const colors = {
 	border_color: '#646464',
 	text_gray: '#646464',
 	white: '#fff',
+	body_bg: '#f9f9f9',
 };
 
 const fonts = {

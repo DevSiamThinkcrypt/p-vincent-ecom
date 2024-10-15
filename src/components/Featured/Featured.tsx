@@ -11,32 +11,35 @@ const Featured = () => {
 			alignItems='center'
 			justifyContent='center'
 			color={colors.border_color}
-			pt={{ base: '8.5rem', md: '12.5rem' }}
+			pt={{ base: '7.5rem', lg: '12.5rem' }}
+			bg={colors?.body_bg}
 		>
 			<Heading
 				textTransform='uppercase'
 				position='relative'
 				zIndex={1}
 				px='1rem'
-				fontSize='2xl'
+				fontSize={{ base: 'xl', sm: '2xl' }}
 				_after={{
 					content: "''",
 					position: 'absolute',
-					width: '30rem',
+					mr: '2.2rem',
+					width: { base: '5rem', sm: '10rem', lg: '20rem', xl: '30rem' },
 					height: '2px',
 					bg: colors.border_color,
 					top: '50%',
-					left: '15rem',
+					left: { base: '9rem', lg: '15rem' },
 					transform: 'translateY(-50%)',
 				}}
 				_before={{
 					content: "''",
 					position: 'absolute',
-					width: '30rem',
+					ml: '2.2rem',
+					width: { base: '5rem', sm: '10rem', lg: '20rem', xl: '30rem' },
 					height: '2px',
 					bg: colors.border_color,
 					top: '50%',
-					right: '15rem',
+					right: { base: '9rem', lg: '15rem' },
 					transform: 'translateY(-50%)',
 				}}
 			>

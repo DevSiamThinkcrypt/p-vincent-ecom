@@ -2,9 +2,21 @@ import useCustomStyle from '@/hooks/useCustomStyle';
 import { Box, Text, Image, Flex } from '@chakra-ui/react';
 import { Icon } from '../Icon';
 import Link from 'next/link';
+import { FC } from 'react';
 
-const ProductCard = () => {
+type ProductCardTypes = {
+	sliderData: {
+		id?: number;
+		image?: string;
+		productTitle?: string;
+		productSubtitle?: string;
+		productOz?: string;
+	};
+};
+
+const ProductCard: FC<ProductCardTypes> = ({ sliderData }) => {
 	const { colors } = useCustomStyle();
+
 	return (
 		// card box (card)
 		<Link href='#' style={{ maxWidth: '400px', display: 'inline-block' }}>
@@ -15,10 +27,16 @@ const ProductCard = () => {
 				bg='white'
 				overflow='hidden'
 				paddingBottom='0.8rem'
+				minH='30rem'
+				transition='all 0.3s ease'
+				_hover={{
+					boxShadow: '0 3px 10px rgba(0,0,0,0.098)',
+					transform: 'scale(1.02)',
+				}}
 			>
 				{/* // card image */}
 				<Image
-					src='/images/card_1.jpg'
+					src={sliderData?.image}
 					alt='card image'
 					w='full'
 					maxH='20rem'
@@ -32,13 +50,13 @@ const ProductCard = () => {
 						fontWeight='500'
 						color={colors.text_pink}
 					>
-						winter essentials
+						{sliderData?.productTitle ? sliderData?.productTitle : ''}
 					</Text>
 					<Text fontSize='1.1rem' fontWeight='600'>
-						Starbucks Coffee
+						{sliderData?.productSubtitle ? sliderData?.productSubtitle : ''}
 					</Text>
 					<Text fontSize='0.9rem' fontWeight={500} color={colors.text_gray}>
-						8 oz
+						{sliderData?.productOz ? sliderData?.productOz : ''}
 					</Text>
 				</Box>
 				<Flex p='1rem' justifyContent='space-between'>
@@ -46,7 +64,7 @@ const ProductCard = () => {
 						<Icon name='heart' color={colors.light_black} />
 						<Icon name='cart_arrow' size={25} color={colors.light_black} />
 					</Flex>
-					<Icon size={25} name='arriw_card_right' color={colors.light_black} />
+					<Icon size={25} name='arrow_card_right' color={colors.light_black} />
 				</Flex>
 			</Box>
 		</Link>

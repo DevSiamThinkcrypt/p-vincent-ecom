@@ -11,18 +11,19 @@ type ButtonType = {
 	[key: string]: any;
 };
 
-const Button: FC<ButtonType> = ({ link, children, ...props }) => {
+const ConsultButton: FC<ButtonType> = ({ link, children, ...props }) => {
 	const { colors } = useCustomStyle();
 	return (
 		<Link href={link}>
 			<Text
 				bg={colors.light_black}
+				textTransform='uppercase'
 				transition='all 0.3s ease'
 				color='white'
 				_hover={{ bg: colors.white, color: colors.light_black }}
 				size='lg'
 				py='0.8rem'
-				maxW='9rem'
+				w='12rem'
 				textAlign='center'
 				{...props}
 			>
@@ -32,4 +33,4 @@ const Button: FC<ButtonType> = ({ link, children, ...props }) => {
 	);
 };
 
-export default Button;
+export default ConsultButton;

@@ -16,6 +16,7 @@ import PageContainer from '../PageContainer/PageContainer';
 import { Icon } from '../Icon';
 import MobileMenu from './MobileMenu';
 import SearchBox from './SearchBox';
+import Link from 'next/link';
 
 const Header = () => {
 	const { colors, fonts } = useCustomStyle();
@@ -101,13 +102,24 @@ const Header = () => {
 
 					{/* Navbar Items */}
 					<Flex justifySelf='end' display={{ base: 'none', lg: 'flex' }}>
-						<GridItem px='2rem'>Home</GridItem>
+						<GridItem
+							px='2rem'
+							_hover={{
+								borderBottom: '1px solid',
+								borderColor: colors.text_pink,
+							}}
+						>
+							Home
+						</GridItem>
 						{/* Categories Dropdown */}
 						<GridItem
 							pos='relative'
 							zIndex={6}
 							onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-							// _hover={{ color: colors.text_color }}
+							_hover={{
+								borderBottom: '1px solid',
+								borderColor: colors.text_pink,
+							}}
 							px='2rem'
 						>
 							<Box cursor='pointer' display='flex'>
@@ -140,7 +152,7 @@ const Header = () => {
 										py='0.8rem'
 										w='100%'
 									>
-										Sub 1
+										<Link href='#'>Scented Candles</Link>
 									</Text>
 									<Text
 										_hover={{
@@ -152,7 +164,7 @@ const Header = () => {
 										py='0.8rem'
 										w='100%'
 									>
-										Sub 2
+										<Link href='#'>Bath Salts</Link>
 									</Text>
 									<Text
 										_hover={{
@@ -164,7 +176,7 @@ const Header = () => {
 										py='0.8rem'
 										w='100%'
 									>
-										Sub 3
+										<Link href='#'>Satin Scrunchies</Link>
 									</Text>
 									<Text
 										_hover={{
@@ -176,16 +188,24 @@ const Header = () => {
 										py='0.8rem'
 										w='100%'
 									>
-										Sub 4
+										<Link href='#'>Dream Catchers</Link>
 									</Text>
 								</Flex>
 							)}
 						</GridItem>
-						<GridItem px='2rem'>About us</GridItem>
-						<GridItem px='2rem'>Wishlist</GridItem>
+						<GridItem
+							px='2rem'
+							_hover={{
+								borderBottom: '1px solid',
+								borderColor: colors.text_pink,
+							}}
+						>
+							About us
+						</GridItem>
+
 						{/* Cart Icon */}
 						<GridItem justifySelf='end' pl='2rem'>
-						{/* <Flex gap='0.5rem' alignItems='center' onClick={onOpen}> */}
+							{/* <Flex gap='0.5rem' alignItems='center' onClick={onOpen}> */}
 							<Flex gap='0.5rem' alignItems='center'>
 								<Icon name='cart' size={25} />
 							</Flex>

@@ -7,13 +7,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { homePageData } from '@/lib/data/homePageData';
 import SwiperCore from 'swiper';
-import { Navigation } from 'swiper/modules';
 import useCustomStyle from '@/hooks/useCustomStyle';
 import { Icon } from '@/components/Icon';
 
-const handCraftSlider = homePageData?.handCraft?.slider;
+const BathSaltsSlider = homePageData?.BathSalts?.slider;
+const BathSaltsHeading = homePageData?.BathSalts?.title;
+const BathSaltsSubHeading = homePageData?.BathSalts?.subTitle;
 
-const CandleSection = () => {
+const BathSaltSection = () => {
 	const swiperRef = useRef<SwiperCore>();
 	const { colors } = useCustomStyle();
 	const CustomPrevArrow = ({ onClick }: { onClick: () => void }) => (
@@ -22,7 +23,7 @@ const CandleSection = () => {
 			position='absolute'
 			top='50%'
 			transform='translateY(-50%)'
-			left={{ base: '15rem', lg: '2rem' }}
+			left={{ base: '1rem', lg: '2rem' }}
 			justifyContent='center'
 			alignItems='center'
 			w='3.4rem'
@@ -42,7 +43,7 @@ const CandleSection = () => {
 			position='absolute'
 			top='50%'
 			transform='translateY(-50%)'
-			right={{ base: '2rem', lg: '-100rem' }}
+			right={{ base: '1rem', lg: '2rem' }}
 			justifyContent='center'
 			alignItems='center'
 			w='3.4rem'
@@ -55,55 +56,58 @@ const CandleSection = () => {
 			<Icon name='arrow_card_right' color={colors.light_black} size={25} />
 		</Flex>
 	);
+
 	return (
-		<Box pt={{ base: '6.5rem', md: '6.5rem' }} mb='5rem' bg={colors.body_bg}>
-			<Title
-				heading='Handcrafted Scented Candles'
-				subHeading='With over hundreds of fragrances to choose from'
-			/>
-			<Box ml='10vw' w='115rem' pos='relative'>
+		<Box pt={{ base: '6.5rem', md: '6.5rem' }} bg={colors?.body_bg}>
+			<Title heading={BathSaltsHeading} subHeading={BathSaltsSubHeading} />
+			<Box
+				ml={{ base: '0', lg: '10vw' }}
+				w={{ base: '100%', lg: '85vw' }}
+				pos='relative'
+			>
 				<Swiper
-					spaceBetween={2}
-					slidesPerView={5}
-					// onSlideChange={() => console.log('slide change')}
-					modules={[Navigation]}
-					navigation={true}
+					spaceBetween={15}
+					slidesPerView={1}
 					onSwiper={swiper => (swiperRef.current = swiper)}
-					// style={{ overflowX: 'visible' }}
+					// style={{ overflow: 'visible' }}
 					breakpoints={{
-						// when window width is >= 640px
-						1280: {
+						1536: {
 							slidesPerView: 5,
+							spaceBetween: 25,
 						},
-
-						1024: {
+						1280: {
 							slidesPerView: 4,
+							spaceBetween: 25,
 						},
-
-						640: {
+						1024: {
 							slidesPerView: 3,
+							spaceBetween: 20,
 						},
-						480: {
+						768: {
+							slidesPerView: 3,
+							spaceBetween: 15,
+						},
+						640: {
 							slidesPerView: 2,
+							spaceBetween: 10,
 						},
 						0: {
 							slidesPerView: 1,
+							spaceBetween: 5,
 						},
 					}}
 				>
-					{handCraftSlider.map((sliderData, i) => (
+					{BathSaltsSlider.map((sliderData, i) => (
 						<SwiperSlide key={i}>
 							<ProductCard sliderData={sliderData} />
 						</SwiperSlide>
 					))}
 				</Swiper>
-				<Box pos='absolute' top='50%'>
-					<CustomNextArrow onClick={() => swiperRef.current?.slideNext()} />
-					<CustomPrevArrow onClick={() => swiperRef.current?.slidePrev()} />
-				</Box>
+				<CustomNextArrow onClick={() => swiperRef.current?.slideNext()} />
+				<CustomPrevArrow onClick={() => swiperRef.current?.slidePrev()} />
 			</Box>
 		</Box>
 	);
 };
 
-export default CandleSection;
+export default BathSaltSection;
