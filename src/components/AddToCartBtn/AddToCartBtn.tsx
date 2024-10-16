@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import useCustomStyle from '@/hooks/useCustomStyle';
-import { Button, Text } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Button } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
 type ButtonType = {
