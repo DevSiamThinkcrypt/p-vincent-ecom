@@ -19,7 +19,10 @@ const ProductCard: FC<ProductCardTypes> = ({ sliderData }) => {
 
 	return (
 		// card box (card)
-		<Link href='#' style={{ maxWidth: '400px', display: 'inline-block' }}>
+		<Link
+			href='#'
+			style={{ maxWidth: '500px', width: '100%', display: 'inline-block' }}
+		>
 			<Box
 				w='full'
 				borderRadius='lg'
@@ -27,7 +30,7 @@ const ProductCard: FC<ProductCardTypes> = ({ sliderData }) => {
 				bg='white'
 				overflow='hidden'
 				paddingBottom='0.8rem'
-				minH='30rem'
+				minH={{ base: 'auto', sm: '30rem' }}
 				transition='all 0.3s ease'
 				_hover={{
 					boxShadow: '0 3px 10px rgba(0,0,0,0.098)',

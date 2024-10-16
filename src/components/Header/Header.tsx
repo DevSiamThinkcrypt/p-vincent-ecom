@@ -108,6 +108,8 @@ const Header = () => {
 								borderBottom: '1px solid',
 								borderColor: colors.text_pink,
 							}}
+							letterSpacing={3}
+							fontSize='0.9rem'
 						>
 							Home
 						</GridItem>
@@ -123,7 +125,9 @@ const Header = () => {
 							px='2rem'
 						>
 							<Box cursor='pointer' display='flex'>
-								<Text>Categories</Text>
+								<Text letterSpacing={3} fontSize='0.9rem'>
+									Categories
+								</Text>
 								<Icon name='arrow_dropdown' />
 							</Box>
 							{isDropdownOpen && (
@@ -151,6 +155,8 @@ const Header = () => {
 										px='1rem'
 										py='0.8rem'
 										w='100%'
+										letterSpacing={3}
+										fontSize='0.9rem'
 									>
 										<Link href='#'>Scented Candles</Link>
 									</Text>
@@ -163,6 +169,8 @@ const Header = () => {
 										px='1rem'
 										py='0.8rem'
 										w='100%'
+										letterSpacing={3}
+										fontSize='0.9rem'
 									>
 										<Link href='#'>Bath Salts</Link>
 									</Text>
@@ -175,6 +183,8 @@ const Header = () => {
 										px='1rem'
 										py='0.8rem'
 										w='100%'
+										letterSpacing={3}
+										fontSize='0.9rem'
 									>
 										<Link href='#'>Satin Scrunchies</Link>
 									</Text>
@@ -187,6 +197,8 @@ const Header = () => {
 										px='1rem'
 										py='0.8rem'
 										w='100%'
+										letterSpacing={3}
+										fontSize='0.9rem'
 									>
 										<Link href='#'>Dream Catchers</Link>
 									</Text>
@@ -199,6 +211,8 @@ const Header = () => {
 								borderBottom: '1px solid',
 								borderColor: colors.text_pink,
 							}}
+							letterSpacing={3}
+							fontSize='0.9rem'
 						>
 							About us
 						</GridItem>

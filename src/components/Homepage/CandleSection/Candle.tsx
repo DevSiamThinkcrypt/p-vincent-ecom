@@ -7,11 +7,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { homePageData } from '@/lib/data/homePageData';
 import SwiperCore from 'swiper';
-import { Navigation } from 'swiper/modules';
 import useCustomStyle from '@/hooks/useCustomStyle';
 import { Icon } from '@/components/Icon';
 
 const handCraftSlider = homePageData?.handCraft?.slider;
+const handCraftHeading = homePageData?.handCraft?.title;
+const handCraftSubHeading = homePageData?.handCraft?.subTitle;
 
 const CandleSection = () => {
 	const swiperRef = useRef<SwiperCore>();
@@ -22,13 +23,14 @@ const CandleSection = () => {
 			position='absolute'
 			top='50%'
 			transform='translateY(-50%)'
-			left={{ base: '15rem', lg: '2rem' }}
+			left={{ base: '1rem', lg: '2rem' }}
 			justifyContent='center'
 			alignItems='center'
 			w='3.4rem'
 			h='3.4rem'
 			cursor='pointer'
 			borderRadius='full'
+			boxShadow='0 3px 10px rgba(0,0,0,0.1)'
 			zIndex='10'
 			onClick={onClick}
 		>
@@ -42,54 +44,57 @@ const CandleSection = () => {
 			position='absolute'
 			top='50%'
 			transform='translateY(-50%)'
-			right={{ base: '2rem', lg: '-100rem' }}
+			right={{ base: '1rem', lg: '2rem' }}
 			justifyContent='center'
 			alignItems='center'
 			w='3.4rem'
 			h='3.4rem'
 			cursor='pointer'
 			borderRadius='full'
+			boxShadow='0 3px 10px rgba(0,0,0,0.1)'
 			zIndex='10'
 			onClick={onClick}
 		>
 			<Icon name='arrow_card_right' color={colors.light_black} size={25} />
 		</Flex>
 	);
-	return (
-		<Box pt={{ base: '6.5rem', md: '6.5rem' }} mb='5rem' bg={colors.body_bg}>
-			<Title
-				heading='Handcrafted Scented Candles'
-				subHeading='With over hundreds of fragrances to choose from'
-			/>
-			<Box ml='10vw' w='115rem' pos='relative'>
-				<Swiper
-					spaceBetween={2}
-					slidesPerView={5}
-					// onSlideChange={() => console.log('slide change')}
-					modules={[Navigation]}
-					navigation={true}
-					onSwiper={swiper => (swiperRef.current = swiper)}
-					// style={{ overflowX: 'visible' }}
-					breakpoints={{
-						// when window width is >= 640px
-						1280: {
-							slidesPerView: 5,
-						},
 
-						1024: {
+	return (
+		<Box pt={{ base: '6.5rem', md: '6.5rem' }} bg={colors?.body_bg}>
+			<Title heading={handCraftHeading} subHeading={handCraftSubHeading} />
+			<Box
+				px={{ base: '3vw', sm: '6vw', lg: '10vw' }}
+				pos='relative'
+				overflowX='hidden'
+			>
+				<Swiper
+					slidesPerView={1}
+					onSwiper={swiper => (swiperRef.current = swiper)}
+					breakpoints={{
+						1536: {
 							slidesPerView: 4,
+							spaceBetween: 30,
+						},
+						1280: {
+							slidesPerView: 3,
+							spaceBetween: 20,
 						},
 
 						640: {
-							slidesPerView: 3,
+							slidesPerView: 2,
+							spaceBetween: 20,
 						},
 						480: {
-							slidesPerView: 2,
+							slidesPerView: 1,
+							spaceBetween: 20,
 						},
 						0: {
 							slidesPerView: 1,
+							spaceBetween: 20,
+							// centeredSlides: true
 						},
 					}}
+					style={{ overflow: 'visible' }}
 				>
 					{handCraftSlider.map((sliderData, i) => (
 						<SwiperSlide key={i}>
@@ -97,10 +102,8 @@ const CandleSection = () => {
 						</SwiperSlide>
 					))}
 				</Swiper>
-				<Box pos='absolute' top='50%'>
-					<CustomNextArrow onClick={() => swiperRef.current?.slideNext()} />
-					<CustomPrevArrow onClick={() => swiperRef.current?.slidePrev()} />
-				</Box>
+				<CustomNextArrow onClick={() => swiperRef.current?.slideNext()} />
+				<CustomPrevArrow onClick={() => swiperRef.current?.slidePrev()} />
 			</Box>
 		</Box>
 	);

@@ -10,7 +10,7 @@ const Footer = () => {
 	// const [isHover2, setIsHover2] = useState(false);
 	return (
 		<Box>
-			<Box bg={colors?.body_bg} py='10rem' px='1rem'>
+			<Box bg={colors?.body_bg} py={{ base: '6rem', md: '10rem' }} px='1rem'>
 				<PageContainer>
 					<Grid
 						gridTemplateColumns={{
@@ -134,9 +134,10 @@ const Footer = () => {
 				py='1rem'
 				gap='0.8rem'
 				justifyContent='center'
-				flexDir={{ base: 'column', sm: 'row' }}
+				alignItems={{ base: 'center' }}
+				flexDir={{ base: 'column', md: 'row' }}
 			>
-				<Text color={colors?.white}>
+				<Text color={colors?.white} textAlign={'center'}>
 					Copyright © 2021, Vincent&#39;s Sphere | All rights reserved |
 					Developed by
 				</Text>

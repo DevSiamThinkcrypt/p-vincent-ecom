@@ -11,12 +11,22 @@ const Consultation = () => {
 				flexDir='column'
 				justifyContent='center'
 				alignItems='center'
-				py='15rem'
+				py={{ base: '5rem', sm: '6rem', md: '7rem', xl: '15rem' }}
 			>
-				<Text fontSize='1.9rem' fontWeight='400'>
+				<Text
+					fontSize={{ base: '1.4rem', md: '1.9rem' }}
+					maxW='39rem'
+					fontWeight='400'
+				>
 					Cant decide which one to get?
 				</Text>
-				<Text fontSize='1.9rem' fontWeight='200' mb='1.4rem'>
+				<Text
+					fontSize={{ base: '1.4rem', md: '1.9rem' }}
+					maxW='39rem'
+					fontWeight='200'
+					mb='1.4rem'
+					textAlign={'center'}
+				>
 					Let us help you choose the best products for you and your loved oned
 				</Text>
 

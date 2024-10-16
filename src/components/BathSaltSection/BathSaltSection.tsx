@@ -61,41 +61,39 @@ const BathSaltSection = () => {
 		<Box pt={{ base: '6.5rem', md: '6.5rem' }} bg={colors?.body_bg}>
 			<Title heading={BathSaltsHeading} subHeading={BathSaltsSubHeading} />
 			<Box
-				ml={{ base: '0', lg: '10vw' }}
-				w={{ base: '100%', lg: '85vw' }}
+				px={{ base: '3vw', sm: '6vw', lg: '10vw' }}
 				pos='relative'
+				overflowX='hidden'
 			>
 				<Swiper
 					spaceBetween={15}
 					slidesPerView={1}
 					onSwiper={swiper => (swiperRef.current = swiper)}
-					// style={{ overflow: 'visible' }}
 					breakpoints={{
 						1536: {
-							slidesPerView: 5,
-							spaceBetween: 25,
+							slidesPerView: 4,
+							spaceBetween: 30,
 						},
 						1280: {
-							slidesPerView: 4,
-							spaceBetween: 25,
-						},
-						1024: {
 							slidesPerView: 3,
 							spaceBetween: 20,
 						},
-						768: {
-							slidesPerView: 3,
-							spaceBetween: 15,
-						},
+
 						640: {
 							slidesPerView: 2,
-							spaceBetween: 10,
+							spaceBetween: 20,
+						},
+						480: {
+							slidesPerView: 1,
+							spaceBetween: 20,
 						},
 						0: {
 							slidesPerView: 1,
-							spaceBetween: 5,
+							spaceBetween: 20,
+							// centeredSlides: true
 						},
 					}}
+					style={{ overflow: 'visible' }}
 				>
 					{BathSaltsSlider.map((sliderData, i) => (
 						<SwiperSlide key={i}>
