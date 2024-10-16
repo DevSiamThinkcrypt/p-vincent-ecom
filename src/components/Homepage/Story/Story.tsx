@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import PageContainer from '../PageContainer/PageContainer';
 import { Box, Flex, Grid, GridItem, Image } from '@chakra-ui/react';
 import StoryHeading from './StoryComponent/StoryHeading';
 import StoryContent from './StoryComponent/StoryContent';
 import { homePageData } from '@/lib/data/homePageData';
-import Button from '../Button/Button';
+
 import useCustomStyle from '@/hooks/useCustomStyle';
+import PageContainer from '@/components/PageContainer/PageContainer';
+import Button from '@/components/Button/Button';
 console.log('deata:', homePageData);
 const Story = () => {
 	const { colors } = useCustomStyle();

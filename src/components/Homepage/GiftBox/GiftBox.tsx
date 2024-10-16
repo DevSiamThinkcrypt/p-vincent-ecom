@@ -1,10 +1,10 @@
 import { Box, Flex, Grid, GridItem, Heading } from '@chakra-ui/react';
 import React from 'react';
-import Title from '../Title/Title';
 import { homePageData } from '@/lib/data/homePageData';
-import PageContainer from '../PageContainer/PageContainer';
 import Link from 'next/link';
 import useCustomStyle from '@/hooks/useCustomStyle';
+import Title from '@/components/Title/Title';
+import PageContainer from '@/components/PageContainer/PageContainer';
 
 const giftBoxCard = homePageData?.giftBox?.giftBoxCard;
 const giftBoxHeading = homePageData?.giftBox?.title;

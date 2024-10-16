@@ -1,6 +1,5 @@
 'use client';
 import ProductCard from '@/components/Card/Card';
-import Title from '@/components/Title/Title';
 import { Box, Flex } from '@chakra-ui/react';
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,6 +8,7 @@ import { homePageData } from '@/lib/data/homePageData';
 import SwiperCore from 'swiper';
 import useCustomStyle from '@/hooks/useCustomStyle';
 import { Icon } from '@/components/Icon';
+import Title from '@/components/Title/Title';
 
 const handCraftSlider = homePageData?.handCraft?.slider;
 const handCraftHeading = homePageData?.handCraft?.title;
@@ -23,7 +23,7 @@ const CandleSection = () => {
 			position='absolute'
 			top='50%'
 			transform='translateY(-50%)'
-			left={{ base: '1rem', lg: '2rem' }}
+			left={{ base: '3rem', lg: '14rem' }}
 			justifyContent='center'
 			alignItems='center'
 			w='3.4rem'
