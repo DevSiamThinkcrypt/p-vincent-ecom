@@ -98,7 +98,7 @@ const CandleSection = () => {
 				>
 					{handCraftSlider.map((sliderData, i) => (
 						<SwiperSlide key={i}>
-							<ProductCard sliderData={sliderData} />
+							<ProductCard id={sliderData?.id} sliderData={sliderData} />
 						</SwiperSlide>
 					))}
 				</Swiper>

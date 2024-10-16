@@ -74,7 +74,9 @@ const Header = () => {
 						gap='0.8rem'
 						justifyContent='space-between'
 					>
-						<Image src='/logo/logo.png' alt='logo-image' w='3rem' h='3rem' />
+						<Link href='/'>
+							<Image src='/logo/logo.png' alt='logo-image' w='3rem' h='3rem' />
+						</Link>
 						<Box
 							pos='relative'
 							onClick={() => setShowSearchBox(!showSearchBox)}
@@ -214,7 +216,7 @@ const Header = () => {
 							letterSpacing={3}
 							fontSize='0.9rem'
 						>
-							About us
+							<Link href='/about'>About us</Link>
 						</GridItem>
 
 						{/* Cart Icon */}

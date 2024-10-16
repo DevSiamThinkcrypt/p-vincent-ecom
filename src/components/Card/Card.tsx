@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 type ProductCardTypes = {
+	id?: number | string;
 	sliderData: {
-		id?: number;
+		id?: number | string;
 		image?: string;
 		productTitle?: string;
 		productSubtitle?: string;
@@ -14,13 +15,13 @@ type ProductCardTypes = {
 	};
 };
 
-const ProductCard: FC<ProductCardTypes> = ({ sliderData }) => {
+const ProductCard: FC<ProductCardTypes> = ({ sliderData, id }) => {
 	const { colors } = useCustomStyle();
 
 	return (
 		// card box (card)
 		<Link
-			href='#'
+			href={`/product/${id}`}
 			style={{ maxWidth: '500px', width: '100%', display: 'inline-block' }}
 		>
 			<Box

@@ -1,4 +1,4 @@
-import AboutContent from '@/components/Homepage/AboutUsPage/AboutContent/AboutContent';
+import AboutContent from '@/components/AboutUsPage/AboutContent/AboutContent';
 import PageLayout from '@/components/layout/Layout';
 import PrimaryBanner from '@/components/PrimaryBanner/PrimaryBanner';
 import { aboutPageData } from '@/lib/data/aboutPageData';

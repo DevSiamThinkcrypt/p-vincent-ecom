@@ -14,6 +14,7 @@ import {
 import React, { useState } from 'react';
 import { Icon } from '../Icon';
 import useCustomStyle from '@/hooks/useCustomStyle';
+import Link from 'next/link';
 
 const MobileMenu = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -37,7 +38,9 @@ const MobileMenu = () => {
 				<DrawerContent bg={colors.light_black} color='white'>
 					<DrawerCloseButton />
 					<DrawerHeader>
-						<Image src='/logo/logo.png' alt='logo-image' w='3rem' h='3rem' />
+						<Link href='/'>
+							<Image src='/logo/logo.png' alt='logo-image' w='3rem' h='3rem' />
+						</Link>
 					</DrawerHeader>
 
 					<DrawerBody>
@@ -64,25 +67,60 @@ const MobileMenu = () => {
 						<Collapse in={isCategoriesOpen} animateOpacity>
 							<Box pl='1.5rem' mt='0.5rem'>
 								<Text
-									py='0.8rem'
+									_hover={{
+										color: colors.text_color,
+										bg: colors.nav_hover,
+									}}
 									cursor='pointer'
-									_hover={{ color: 'gray.500' }} // Hover effect for sub-menu items
+									px='1rem'
+									py='0.8rem'
+									w='100%'
+									letterSpacing={3}
+									fontSize='0.9rem'
 								>
-									Sub 1
+									<Link href='#'>Scented Candles</Link>
 								</Text>
 								<Text
-									py='0.8rem'
+									_hover={{
+										color: colors.text_color,
+										bg: colors.nav_hover,
+									}}
 									cursor='pointer'
-									_hover={{ color: 'gray.500' }} // Hover effect for sub-menu items
+									px='1rem'
+									py='0.8rem'
+									w='100%'
+									letterSpacing={3}
+									fontSize='0.9rem'
 								>
-									Sub 2
+									<Link href='#'>Bath Salts</Link>
 								</Text>
 								<Text
-									py='0.8rem'
+									_hover={{
+										color: colors.text_color,
+										bg: colors.nav_hover,
+									}}
 									cursor='pointer'
-									_hover={{ color: 'gray.500' }}
+									px='1rem'
+									py='0.8rem'
+									w='100%'
+									letterSpacing={3}
+									fontSize='0.9rem'
 								>
-									Sub 3
+									<Link href='#'>Satin Scrunchies</Link>
+								</Text>
+								<Text
+									_hover={{
+										color: colors.text_color,
+										bg: colors.nav_hover,
+									}}
+									cursor='pointer'
+									px='1rem'
+									py='0.8rem'
+									w='100%'
+									letterSpacing={3}
+									fontSize='0.9rem'
+								>
+									<Link href='#'>Dream Catchers</Link>
 								</Text>
 							</Box>
 						</Collapse>
