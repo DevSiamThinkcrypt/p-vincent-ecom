@@ -10,7 +10,7 @@ type ButtonType = {
 	[key: string]: any;
 };
 
-const AddToCartBtn: FC<ButtonType> = ({ onclick, children, ...props }) => {
+const ButtonPrimary: FC<ButtonType> = ({ onclick, children, ...props }) => {
 	const { colors } = useCustomStyle();
 	return (
 		<Button
@@ -22,8 +22,9 @@ const AddToCartBtn: FC<ButtonType> = ({ onclick, children, ...props }) => {
 			_hover={{ bg: colors.text_color, color: colors.white }}
 			size={{ base: 'md', md: 'lg' }}
 			py='0.8rem'
-			w='12rem'
+			w={{ base: '6rem', md: '12rem' }}
 			textAlign='center'
+			type='submit'
 			{...props}
 		>
 			{children}
@@ -31,4 +32,4 @@ const AddToCartBtn: FC<ButtonType> = ({ onclick, children, ...props }) => {
 	);
 };
 
-export default AddToCartBtn;
+export default ButtonPrimary;

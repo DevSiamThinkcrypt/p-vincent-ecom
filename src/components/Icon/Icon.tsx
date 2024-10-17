@@ -3,21 +3,25 @@
 import useCustomStyle from '@/hooks/useCustomStyle';
 // import { useColorModeValue } from '@chakra-ui/react';
 import React, { FC } from 'react';
+
+import { IoSearch } from 'react-icons/io5';
+import { FiMenu } from 'react-icons/fi';
 import {
+	IoMdArrowDropdown,
+	IoMdStarOutline,
+	IoMdStar,
 	IoMdCart,
 	IoIosHome,
 	IoIosArrowForward,
 	IoIosArrowBack,
 } from 'react-icons/io';
-
-import { IoSearch } from 'react-icons/io5';
-import { FiMenu } from 'react-icons/fi';
-import { IoMdArrowDropdown } from 'react-icons/io';
-import { FaTimes, FaHeart } from 'react-icons/fa';
+import { FaTimes, FaHeart, FaTwitter } from 'react-icons/fa';
 import { TiArrowForward } from 'react-icons/ti';
 import { MdOutlineLocalPhone, MdEmail } from 'react-icons/md';
 import { ImFacebook2 } from 'react-icons/im';
-import { IoLogoInstagram } from 'react-icons/io5';
+import { IoLogoInstagram, IoMailOutline } from 'react-icons/io5';
+import { FaWhatsapp, FaPinterest } from 'react-icons/fa6';
+import { RiFacebookFill } from 'react-icons/ri';
 
 import { Box } from '@chakra-ui/react';
 // export type IconNameOptions = 'cart' | 'hamburger' | 'search' | 'user';
@@ -34,7 +38,14 @@ export type IconNameOptions =
 	| 'phone'
 	| 'mail'
 	| 'facebook'
-	| 'instragram';
+	| 'instragram'
+	| 'star_outline'
+	| 'star_fill'
+	| 'fb_solid'
+	| 'whatsapp'
+	| 'pinterest'
+	| 'twitter'
+	| 'mail_solid';
 
 type IconProps = {
 	size?: number;
@@ -59,6 +70,13 @@ const icons: { [key in IconNameOptions]: FC<{ size: number; color: string }> } =
 		mail: MdEmail,
 		facebook: ImFacebook2,
 		instragram: IoLogoInstagram,
+		star_outline: IoMdStarOutline,
+		star_fill: IoMdStar,
+		fb_solid: RiFacebookFill,
+		whatsapp: FaWhatsapp,
+		pinterest: FaPinterest,
+		twitter: FaTwitter,
+		mail_solid: IoMailOutline,
 	};
 
 const Icon: FC<IconProps> = ({ name, _hover, ...props }) => {

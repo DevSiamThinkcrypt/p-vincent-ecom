@@ -14,6 +14,17 @@ const PrimaryBanner: FC<PrimaryBannerTypes> = ({ aboutBanner }) => {
 	const { colors } = useCustomStyle();
 	return (
 		<Box
+			pos='relative'
+			_before={{
+				content: '""',
+				position: 'absolute',
+				top: 0,
+				left: 0,
+				w: 'full',
+				h: 'full',
+				bg: 'rgba(0, 0, 0, 0.15)', // Adjust the opacity and color of the overlay as needed
+				zIndex: 1,
+			}}
 			bgImage={`url(${aboutBanner?.image})`}
 			backgroundSize='cover'
 			backgroundPosition='center'
@@ -25,7 +36,6 @@ const PrimaryBanner: FC<PrimaryBannerTypes> = ({ aboutBanner }) => {
 		>
 			<PageContainer>
 				<Heading
-					textShadow='0 3px 10px rgba(0,0,0,0.4)'
 					color={colors?.white}
 					fontSize={{ base: '2.2rem', md: '3.25rem' }}
 				>

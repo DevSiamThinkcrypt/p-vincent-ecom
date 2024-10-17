@@ -23,7 +23,7 @@ const CandleSection = () => {
 			position='absolute'
 			top='50%'
 			transform='translateY(-50%)'
-			left={{ base: '3rem', lg: '14rem' }}
+			left={{ base: '1rem', lg: '2rem' }}
 			justifyContent='center'
 			alignItems='center'
 			w='3.4rem'

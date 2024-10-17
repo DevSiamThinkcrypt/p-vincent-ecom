@@ -1,7 +1,6 @@
 'use client';
 import ProductCard from '@/components/Card/Card';
-import Title from '@/components/Title/Title';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -10,11 +9,9 @@ import SwiperCore from 'swiper';
 import useCustomStyle from '@/hooks/useCustomStyle';
 import { Icon } from '@/components/Icon';
 
-const BathSaltsSlider = homePageData?.BathSalts?.slider;
-const BathSaltsHeading = homePageData?.BathSalts?.title;
-const BathSaltsSubHeading = homePageData?.BathSalts?.subTitle;
+const handCraftSlider = homePageData?.handCraft?.slider;
 
-const BathSaltSection = () => {
+const RelatedProduct = () => {
 	const swiperRef = useRef<SwiperCore>();
 	const { colors } = useCustomStyle();
 	const CustomPrevArrow = ({ onClick }: { onClick: () => void }) => (
@@ -23,7 +20,7 @@ const BathSaltSection = () => {
 			position='absolute'
 			top='50%'
 			transform='translateY(-50%)'
-			left={{ base: '1rem', lg: '2rem' }}
+			left={{ base: '1rem', lg: '14rem' }}
 			justifyContent='center'
 			alignItems='center'
 			w='3.4rem'
@@ -60,15 +57,22 @@ const BathSaltSection = () => {
 	);
 
 	return (
-		<Box pt={{ base: '6.5rem', md: '6.5rem' }} bg={colors?.body_bg}>
-			<Title heading={BathSaltsHeading} subHeading={BathSaltsSubHeading} />
+		<Box>
+			<Text
+				px={{ base: '3vw', sm: '6vw', lg: '10vw' }}
+				fontSize={'1.8rem'}
+				fontWeight={'500'}
+				letterSpacing={'1.3px'}
+				mb='1.3rem'
+			>
+				Related Products
+			</Text>
 			<Box
 				px={{ base: '3vw', sm: '6vw', lg: '10vw' }}
 				pos='relative'
 				overflowX='hidden'
 			>
 				<Swiper
-					spaceBetween={15}
 					slidesPerView={1}
 					onSwiper={swiper => (swiperRef.current = swiper)}
 					breakpoints={{
@@ -97,9 +101,9 @@ const BathSaltSection = () => {
 					}}
 					style={{ overflow: 'visible' }}
 				>
-					{BathSaltsSlider.map((sliderData, i) => (
+					{handCraftSlider.map((sliderData, i) => (
 						<SwiperSlide key={i}>
-							<ProductCard sliderData={sliderData} />
+							<ProductCard id={sliderData?.id} sliderData={sliderData} />
 						</SwiperSlide>
 					))}
 				</Swiper>
@@ -110,4 +114,4 @@ const BathSaltSection = () => {
 	);
 };
 
-export default BathSaltSection;
+export default RelatedProduct;
