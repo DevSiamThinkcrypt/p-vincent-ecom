@@ -5,7 +5,8 @@ import useCustomStyle from '@/hooks/useCustomStyle';
 import React, { FC } from 'react';
 
 import { IoSearch } from 'react-icons/io5';
-import { FiMenu } from 'react-icons/fi';
+import { FiMenu,FiPlus,FiMinus  } from 'react-icons/fi';
+
 import {
 	IoMdArrowDropdown,
 	IoMdStarOutline,
@@ -45,7 +46,7 @@ export type IconNameOptions =
 	| 'whatsapp'
 	| 'pinterest'
 	| 'twitter'
-	| 'mail_solid';
+	| 'mail_solid'| 'plus_icon' |'minus_icon';
 
 type IconProps = {
 	size?: number;
@@ -77,6 +78,9 @@ const icons: { [key in IconNameOptions]: FC<{ size: number; color: string }> } =
 		pinterest: FaPinterest,
 		twitter: FaTwitter,
 		mail_solid: IoMailOutline,
+		plus_icon: FiPlus,
+		minus_icon: FiMinus,
+		
 	};
 
 const Icon: FC<IconProps> = ({ name, _hover, ...props }) => {

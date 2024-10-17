@@ -17,13 +17,14 @@ import { Icon } from '../Icon';
 import MobileMenu from './MobileMenu';
 import SearchBox from './SearchBox';
 import Link from 'next/link';
+import ShoppingCart from '../Cart/ShoppingCart';
 
 const Header = () => {
 	const { colors, fonts } = useCustomStyle();
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const [showSearchBox, setShowSearchBox] = useState(false);
 	// const { isOpen, onOpen, onClose } = useDisclosure();
-	// const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+	const [showCart, setShowCart] = useState(false);
 
 	// const handleToggleCategories = () => {
 	// 	setIsCategoriesOpen(!isCategoriesOpen);
@@ -221,8 +222,11 @@ const Header = () => {
 
 						{/* Cart Icon */}
 						<GridItem justifySelf='end' pl='2rem'>
-							{/* <Flex gap='0.5rem' alignItems='center' onClick={onOpen}> */}
-							<Flex gap='0.5rem' alignItems='center'>
+							<Flex
+								gap='0.5rem'
+								alignItems='center'
+								onClick={() => setShowCart(!showCart)}
+							>
 								<Icon name='cart' size={25} />
 							</Flex>
 						</GridItem>
@@ -255,6 +259,8 @@ const Header = () => {
 					</Box>
 				</motion.div>
 			)}
+
+			<ShoppingCart showCart={showCart} setShowCart={setShowCart} />
 		</Box>
 	);
 };

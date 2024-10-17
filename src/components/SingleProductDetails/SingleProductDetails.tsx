@@ -56,7 +56,7 @@ const SingleProductDetails = ({
 				fontWeight={'500'}
 				color={colors?.text_gray}
 				gap='0.5rem'
-				pb='0.2rem'
+				pb='0.3rem'
 			>
 				<Text letterSpacing={'1.6px'}>Category:</Text>
 				<Text letterSpacing={'1.6px'}>Scented Candles</Text>
